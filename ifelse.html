@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Percabangan if/else/if</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+        const waktu = new Date().getHours();
+      let greeting;
+      
+
+      if (waktu < 10) {
+        greeting = "selamat pagi"
+      }
+      else if (waktu < 20) {
+        greeting = "have a nice day"
+      }
+      else {
+        greeting = "selamat malam"
+      }
+      document.getElementById("demo").innerHTML = greeting;
+     
+    </script>
+  </body>
+</html>
