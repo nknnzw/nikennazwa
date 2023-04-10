@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object</title>
+    </head>
+
+    <body>
+        <h1>Object</h1>
+       
+
+        <p id="Name"></p>
+        <p id="age"></p>
+        <p id="prodi"></p>
+
+        <script>
+            const biodata = {
+                Name: "Niken Nazwa Salsabillah",
+                
+                age: 18
+                
+            };
+            const { Name ,  age} = biodata;
+
+            const prodii = {
+                prodi: "RPL"   
+            };
+            const { prodi} = prodii;
+
+            document.getElementById("Name").innerHTML = (" Halo nama saya " + Name);
+            document.getElementById("age").innerHTML = (" Umur saya " + age);
+            document.getElementById("prodi").innerHTML = (" Prodi saya " + prodi);
+
+            
+        </script>
+        
+        
+    </body>
+</html>
