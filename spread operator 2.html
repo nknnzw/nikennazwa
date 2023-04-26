@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contoh Program Spread Operator</title>
+</head>
+<body>
+	<h1>Data Array</h1>
+	<p id="output"></p>
+
+
+	<script> 
+    const array1 = ["mangga", "nanas", "jambu"];
+    const array2 = ["air", "api", "udara"];
+    const array3 = [...array1, ...array2];
+    const output = document.getElementById("output");
+    output.innerHTML = array3;
+    
+    </script>
+
+</body>
+</html>
