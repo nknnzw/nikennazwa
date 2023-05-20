@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: url("./bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  filter: blur(5px);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color:  rgb(240, 202, 240) transparent;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color:rgb(235, 225, 235);
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color:rgb(150, 68, 150);
+}
+
+input[type="button"],
+input[type="reset"],
+input[type="button1"] {
+  padding: 3px 7px;
+  background-color: rgb(150, 68, 150);
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="button1"] {
+  background-color: rgb(138, 7, 138);
+}
+
+.tombol {
+  padding: 10px 20px;
+  background-color: rgb(150, 68, 150);
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px 20px;
+}
+
+.tombol:hover {
+  background-color: rgb(138, 7, 138);
+}
+
+#hasil {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+#dataDiv {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.384);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  color:rgb(131, 23, 131);
+}

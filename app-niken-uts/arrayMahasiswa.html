@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulir Mahasiswa</title>
+    <link rel="stylesheet" href="./tampilanarray.css" />
+  </head>
+  <body>
+    <h1>Data Mahasiswa</h1>
+    <form id="myForm">
+      <label for="nama">Nama Mahasiswa:</label>
+      <input type="text" id="nama" name="nama" required /><br /><br />
+
+      <label for="tanggal_lahir">Tanggal Lahir:</label>
+      <input
+        type="date"
+        id="tanggal_lahir"
+        name="tanggal_lahir"
+        required
+      /><br /><br />
+
+      <label for="nomor_hp">Nomor HP:</label>
+      <input type="text" id="nomor_hp" name="nomor_hp" required /><br /><br />
+
+      <label for="alamat">Alamat:</label>
+      <input type="text" id="alamat" name="alamat" required /><br /><br />
+
+      <input type="button" value="Submit" onclick="submitForm()" />
+      <input type="reset" value="Reset" />
+      <input type="button" value="Tampil" onclick="tampilkanData()" />
+      <a href="biodata.html"><input type="button1"  value="MY PROFILE" /></a>
+    </form>
+    <div id="dataDiv"></div>
+
+    <script src="./manipulasiArray.js"></script>
+  </body>
+</html>

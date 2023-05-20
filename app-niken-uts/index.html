@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Mahasiswa</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./tampilan.css" />
+  </head>
+  <body>
+    <h1>Nilai Mahasiswa</h1>
+
+    <form>
+      <label for="nim"><i class="fa-solid fa-id-card"></i> NIM:</label>
+      <input type="text" id="nim" name="nim" />
+
+      <label for="nama"><i class="fa-solid fa-user-graduate"></i> Nama:</label>
+      <input type="text" id="nama" name="nama" />
+
+      <label for="mataKuliah"
+        ><i class="fa-solid fa-graduation-cap"></i> Mata Kuliah:</label>
+      <select id="mataKuliah" name="mataKuliah">
+        <option value="" selected disabled>Pilih Mata Kuliah</option>
+        <option value="Bahasa Indonesia">Bahasa Indonesia</option>
+        <option value="Pendidikan Pancasila">Pendidikan Pancasila</option>
+        <option value="Arsitektur Komputer">Arsitektur Komputer</option>
+        <option value="Struktur Data dan Algoritma">Struktur Data dan Algoritma</option>
+        <option value="Pemrograman Komputer 2">Pemrograman Komputer 2</option>
+        <option value="Pemrograman Komputer 2">Praktik Pemrograman Komputer 2</option>
+        <option value="Kalkulus 2">Kalkulus 2</option>
+        <option value="Diskrit 1">Diskrit 1</option>
+        <option value="Desain Perangkat Lunak">Desain Perangkat Lunak</option>
+        <option value="Sistem Operasi">Sistem Operasi</option>
+      </select>
+
+      <label for="nilaiAkhir"
+        ><FontAwesomeIcon icon="fa-solid fa-star" />
+        <i class="fa-solid fa-star"></i> Nilai Akhir:</label
+      >
+      <input type="text" id="nilaiAkhir" name="nilaiAkhir" />
+
+      <input type="button" value="TAMPIL" onclick="tampilkanNilai()" />
+      <input type="reset" value="RESET" />
+      <a href="arrayMahasiswa.html"><input type="button1"  value="DATA MAHASISWA" /></a>
+	  
+      <br />
+      <div id="hasil"></div>
+    </form>
+	
+    <script src="./logikaNilaiAkhir.js"></script>
+  </body>
+</html>
