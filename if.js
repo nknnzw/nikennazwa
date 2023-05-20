@@ -12,6 +12,8 @@ if(score >= 90) {
 }  else if(score <= 60) {
     result = "Anda mendapatkan nilai E."
 }
+else result = "F";
+
 
 
 console.log(result);

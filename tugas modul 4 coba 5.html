@@ -1,0 +1,55 @@
+<html>
+    <head><title>Hitung otomatis menggunakan javacript</title>
+    <style type="text/css">
+    body {
+     font-family:Arial;
+    }
+    #canvas {
+     width:600px;
+     background-color:grey;
+     padding:20px;
+     margin: auto;
+    }
+    H2 {
+     text-align : center;
+     color:white;
+    }
+    </style>
+    </head>
+    <body>
+    <div id="canvas">
+    <h2>Formulir Pemesanan Barang</h2>
+    <form>
+    <table border ="1" width="100%" style="background-color:brown;color:white;border-collapse:collapse">
+    <tr style="text-align:left" style="cellpadding:10">
+    <thead>
+    <th>No</th><th>Nama Barang</th><th>Harga Satuan</th><th>Qty</th>
+    </tr>
+    </thead>
+    <tr>
+    <td>1</td><td>Laptop Asus</td><td><input type="text" id="harga_laptop"  value="" onchange="total()"></td><td><input type="number" id="qty_laptop" value="" onchange="total()">
+    </tr>
+    <tr>
+    <td>2</td><td>Printer Canon</td><td><input type="text" id="harga_printer"  value="" onchange="total()"></td><td><input type="number" id="qty_printer" value="" onchange="total()">
+    </tr>
+    <tr>
+    <td>3</td><td>Harddisk Samsung</td><td><input type="text" id="harga_harddisk"  value="" onchange="total()"></td><td><input type="number" id="qty_harddisk" value="" onchange="total()"></td>
+    </tr>
+    <tr>
+    <td colspan="3">Grand Total</td><td><input type="text" id="total_harga"  value="0"></td>
+    </tr>
+    </table>
+    </form>
+    </div>
+    </body>
+    </html>
+    <!--Menghitung fungsi total-->
+    <script type="text/javascript">
+    function total() {
+    var harga_laptop = document.getElementById('harga_laptop').value * document.getElementById('qty_laptop').value;
+    var harga_printer = document.getElementById('harga_printer').value * document.getElementById('qty_printer').value;
+    var harga_harddisk = document.getElementById('harga_harddisk').value * document.getElementById('qty_harddisk').value;
+    var grand_total= harga_laptop + harga_printer + harga_harddisk;
+    document.getElementById('total_harga').value = grand_total;
+    }
+    </script>

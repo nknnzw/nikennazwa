@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Toko HP</title>
+	<script src="toko-hp.js"></script>
+</head>
+<body>
+	<h1>Toko HP</h1>
+	<form>
+		<label for="name">Nama:</label>
+		<input type="text" id="name" name="name"><br><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br><br>
+
+		<label for="member">Member:</label>
+		<input type="checkbox" id="member" name="member"><br><br>
+
+		<label for="handphone">Handphone:</label>
+		<select id="handphone" name="handphone">
+			<option value="Samsung Galaxy S21">Samsung Galaxy S21</option>
+			<option value="iPhone 12">iPhone 12</option>
+			<option value="Xiaomi Mi 11">Xiaomi Mi 11</option>
+		</select><br><br>
+
+		<label for="quantity">Quantity:</label>
+		<input type="number" id="quantity" name="quantity"><br><br>
+
+		<button type="button" onclick="calculateTotal()">Total</button><br><br>
+
+		<label for="total">Total Harga:</label>
+		<input type="text" id="total" name="total" readonly><br><br>
+	</form>
+<script>
+function calculateTotal() {
+	let handphone = document.getElementById("handphone").value;
+	let quantity = parseInt(document.getElementById("quantity").value);
+	let isMember = document.getElementById("member").checked;
+	let price = 0;
+
+	switch(handphone) {
+		case "Samsung Galaxy S21":
+			price = 15000000;
+			break;
+		case "iPhone 12":
+			price = 17000000;
+			break;
+		case "Xiaomi Mi 11":
+			price = 13000000;
+			break;
+	}
+
+	let total = price * quantity;
+
+	if (isMember) {
+		total *= 0.9;
+	}
+
+	document.getElementById("total").value = total;
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="Itr">
+<head>
+	<title>uts</title>
+	<meta charset="utf-9">
+	<link rel="stylesheet" href="tampilan.css">
+	<script src="kode.js"></script>
+</head>
+<body>
+	<div class="nilaimhs-box">
+		<h1>Nilai Mahasiswa</h1>
+		<div class="textbox">
+			<i class=" fas fa-nim"></i>
+			<label for="">NIM</label>
+			<input type="Nim" id="nim"  placeholder="">
+		</div>
+		<div class="textbox">
+			<i class="fas fa-nama"></i>
+			<label for="">Nama</label>
+			<input type="Nama" id="nama" placeholder="">
+		</div>
+		<div class="textbox">
+			<i class="fas fa-nilai"></i>
+			<label for="">Masukkan Nilai</label>
+			<input type="Nilai" id="nilai" placeholder="">
+		</div>
+		<div class="select">
+			<select class="matkul" id="matkul">
+				<option selected disabled>Pilih Mata Kuliah</option>
+				<option value="b.indo">Bahasa Indonesia</option>
+				<option value="Pkn">Pendidikan Pancasila</option>
+				<option value="arsitektur">Arsitektur Komputer</option>
+				<option value="struktur">Struktur Data & Algoritma</option>
+				<option value="pemrograman">Pemrograman Komputer 2</option>
+				<option value="praktik">Praktik Pemrograman Komputer 2</option>
+				<option value="Kalkulus">Kalkulus 2</option>
+				<option value="Diskrit">Diskrit 1</option>
+				<option value="desain">Desain Perangkat Lunak</option>
+				<option value="sistem">Sistem Operasi</option> <br>				
+				<div class="icon">
+					<i class="fa-solid fa-caret-down"></i>
+				</div>
+			</select>		
+		</div>
+	</div>
+		<div class="button">
+		<input type="button" value="TAMPIL" id="btn1" onclick="tampilData()">
+        <input type="button" value="RESET" id="btn2" onclick="resetForm()">
+		</div>
+	
+		<div class="tabelbox">
+		<div class="tabelrow tabelhead" id="hasil">
+				<div class="tabelcell">
+				<p>NIM</p>
+				</div>
+				<div class="tabelcell">
+				<p>Nama</p>
+				</div>
+				<div class="tabelcell">
+				<p>Mata Kuliah<p>
+				</div>
+				<div class="tabelcell">
+				<p>Nilai Angka</p>
+				</div>
+				<div class="tabelcell">
+				<p>Nilai Huruf</p>
+				</div>
+				<div class="tabelcell">
+				<p>Nilai Angka</p>
+				</div>
+				<div class="tabelcell">
+				<p>Indeks Nilai</p>
+				</div>
+		</div>
+		</div>
+</body>
+	</html>

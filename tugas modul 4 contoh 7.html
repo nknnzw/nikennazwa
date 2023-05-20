@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Toko HP</title>
+	<script type="text/javascript">
+		function calculate() {
+			var harga1 = parseInt(document.getElementById("harga1").value);
+			var harga2 = parseInt(document.getElementById("harga2").value);
+			var jumlah = harga1 + harga2;
+			var member = document.getElementById("member").checked;
+			if (member) {
+				jumlah *= 0.9;
+			}
+			document.getElementById("jumlah").value = jumlah;
+		}
+	</script>
+</head>
+<body>
+	<h1>Toko HP</h1>
+	<form>
+		<label for="harga1">Harga Barang 1:</label>
+		<input type="number" id="harga1" name="harga1"><br><br>
+		<label for="harga2">Harga Barang 2:</label>
+		<input type="number" id="harga2" name="harga2"><br><br>
+		<label for="member">Saya adalah member:</label>
+		<input type="checkbox" id="member" name="member"><br><br>
+		<input type="button" value="Hitung" onclick="calculate()">
+		<br><br>
+		<label for="jumlah">Jumlah yang harus dibayar:</label>
+		<input type="number" id="jumlah" name="jumlah" readonly>
+	</form>
+</body>
+</html>

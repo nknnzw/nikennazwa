@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Daftar Harga HP</title>
+</head>
+<body>
+	<h1>Daftar Harga HP</h1>
+	<table>
+		<tr>
+			<th>Brand</th>
+			<th>Model</th>
+			<th>Harga</th>
+		</tr>
+		<tr>
+			<td>Samsung</td>
+			<td>Galaxy S21</td>
+			<td>12.000.000</td>
+		</tr>
+		<tr>
+			<td>Apple</td>
+			<td>iPhone 12 Pro</td>
+			<td>15.000.000</td>
+		</tr>
+		<tr>
+			<td>Xiaomi</td>
+			<td>Redmi Note 10 Pro</td>
+			<td>3.500.000</td>
+		</tr>
+	</table>
+	<br>
+	<h2>Formulir Pembelian</h2>
+	<form>
+		<label for="brand">Brand:</label>
+		<input type="text" id="brand" name="brand"><br><br>
+		<label for="model">Model:</label>
+		<input type="text" id="model" name="model"><br><br>
+		<label for="jumlah">Jumlah:</label>
+		<input type="number" id="jumlah" name="jumlah" min="1"><br><br>
+		<input type="button" value="Tambahkan ke Keranjang" onclick="tambahKeKeranjang()"><br><br>
+	</form>
+	<h2>Keranjang Belanja</h2>
+	<table id="keranjang">
+		<tr>
+			<th>Brand</th>
+			<th>Model</th>
+			<th>Harga</th>
+			<th>Jumlah</th>
+			<th>Subtotal</th>
+		</tr>
+	</table>
+	<br>
+	<h2>Total Belanja</h2>
+	<p id="total"></p>
+</body>
+<script>
+	var keranjang = [];
+
+	function tambahKeKeranjang() {
+		var brand = document.getElementById("brand").value;
+		var model = document.getElementById("model").value;
+		var jumlah = document.getElementById("jumlah").value;
+		var harga = cariHarga(brand, model);
+
+		if (harga == -1) {
+			alert("HP tidak ditemukan!");
+		} else {
+			var subtotal = harga * jumlah;
+			var item = [brand, model, harga, jumlah, subtotal];
+			keranjang.push(item);
+			tampilkanKeranjang();
+			tampilkanTotal();
+		}
+	}
+
+	function cariHarga(brand, model) {
+		switch (brand) {
+			case "Samsung":
+				switch (model) {
+					case "Galaxy S21":
+						return 12000000;
+						break;
+					default:
+						return -1;
+						break;
+				}
+				break;
+			case "Apple":
+				switch (model) {
+					case "iPhone 12 Pro":
+						return 15000000;
+						break;
+					default:
+						return -1;
+						break;
+				}
+				break;
+			case "Xiaomi":
+				switch

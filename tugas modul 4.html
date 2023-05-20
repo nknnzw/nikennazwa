@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toko Handphone - Strawberry Cell</title>
+</head>
+<body>
+  <h1>Toko Handphone - Strawberry Cell</h1>
+
+  <ul id="barangList"></ul>
+
+  <h2>Daftar Belanja</h2>
+
+  <div>
+    <input type="checkbox" id="barang0" data-index="0">
+    <label for="barang0">Samsung Galaxy S21</label>
+  </div>
+  <div>
+    <input type="checkbox" id="barang1" data-index="1">
+    <label for="barang1">iPhone 13 Pro</label>
+  </div>
+  <div>
+    <input type="checkbox" id="barang2" data-index="2">
+    <label for="barang2">Xiaomi Redmi Note 10 Pro</label>
+  </div>
+  <div>
+    <input type="checkbox" id="barang3" data-index="3">
+    <label for="barang3">OnePlus
+
+        <script>
+            // Daftar barang yang dijual di Toko Handphone
+const barang = [
+  {nama: "Samsung Galaxy S21", harga: 12000000},
+  {nama: "iPhone 13 Pro", harga: 15000000},
+  {nama: "Xiaomi Redmi Note 10 Pro", harga: 4000000},
+  {nama: "OnePlus 9", harga: 9000000},
+  {nama: "Google Pixel 6", harga: 10000000},
+  {nama: "Asus ROG Phone 5", harga: 11000000},
+];
+
+// Fungsi untuk menampilkan daftar barang di HTML
+function tampilkanBarang() {
+  const barangList = document.getElementById("barangList");
+
+  barang.forEach((item) => {
+    const li = document.createElement("li");
+    li.innerText = `${item.nama} - Rp. ${item.harga.toLocaleString()}`;
+    barangList.appendChild(li);
+  });
+}
+
+// Fungsi untuk menghitung total harga belanja
+function hitungTotal() {
+  const inputElements = document.querySelectorAll("input[type='checkbox']:checked");
+  let totalHarga = 0;
+
+  inputElements.forEach((item) => {
+    const index = item.getAttribute("data-index");
+    totalHarga += barang[index].harga;
+  });
+
+  // Cek apakah customer adalah member, jika iya maka berikan diskon 10%
+  const isMember = document.getElementById("memberCheckbox").checked;
+  if (isMember) {
+    totalHarga *= 0.9;
+  }
+
+  // Tampilkan total harga di HTML
+  const totalHargaText = document.getElementById("totalHargaText");
+  totalHargaText.innerText = `Rp. ${totalHarga.toLocaleString()}`;
+}
+
+// Panggil fungsi tampilkanBarang saat halaman dimuat
+document.addEventListener("DOMContentLoaded", () => {
+  tampilkanBarang();
+});
+
+// Panggil fungsi hitungTotal saat customer memilih barang atau mengaktifkan promo member
+const checkboxes = document.querySelectorAll("input[type='checkbox'], input[type='checkbox'] + label, #memberCheckbox");
+checkboxes.forEach((item) => {
+  item.addEventListener("click", hitungTotal);
+});
+
+        </script>
+        </body>
+        </html>
+    
+        
