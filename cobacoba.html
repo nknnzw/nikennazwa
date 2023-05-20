@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Program Belanja</title>
+    <link rel="stylesheet" href="probel.css">
+</head>
+<body>
+	<div style="text-align: center;">
+	<h3>Program Ayam Kampus Geprek</h3>
+	<form>
+		<label for="nama-pembeli">Nama Pembeli</label>
+		<input type="text" id="nama-pembeli"><br>
+
+		<label for="makanan">Makanan</label>
+		<select id="makanan" onchange="setHargaMakanan()">
+			<option value="" disabled selected>Pilih Makanan</option>
+			<option value="ayam-geprek" data-harga="15000">Ayam Geprek</option>
+			<option value="ayam-goreng" data-harga="12000">Ayam Goreng</option>
+			<option value="ayam-penyet" data-harga="18000">Ayam Penyet</option>
+		</select><br>
+        <label for="jumlah-makanan">Jumlah</label>
+        <input type="number" id="jumlah-makanan"><br>
+		<label for="harga-makanan">Harga Makanan</label>
+		<input type="number" id="harga-makanan" disabled><br>
+
+		<label for="minuman">Minuman</label>
+		<select id="minuman" onchange="setHargaMinuman()">
+			<option value="" disabled selected>Pilihan Minuman</option>
+			<option value="teh-manis" data-harga="5000">Teh Manis</option>
+			<option value="jus-jeruk" data-harga="10000">Jus Jeruk</option>
+			<option value="es-kopi" data-harga="8000">Es Kopi</option>
+		</select><br>
+        <label for="jumlah-minuman">Jumlah</label>
+        <input type="number" id="jumlah-minuman"><br>
+		<label for="harga-minuman">Harga Minuman</label>
+		<input type="number" id="harga-minuman" disabled><br>
+
+		<label for="uang-tunai">Uang Tunai:</label>
+		<input type="number" id="uang-tunai"><br>
+		<button type="button" onclick="hitungBelanja()">Hitung Belanja</button>
+        <button type="button" onclick="tampilTotalHarga()">Total Harga</button>
+		<div id="total-harga"></div>
+	</form>
+
+	<div id="output"></div>
+
+	<script>
+			// membuat opsi pertama terpilih secara default
+			document.getElementById("makanan").selectedIndex = 0;
+			document.getElementById("minuman").selectedIndex = 0
+		function setHargaMakanan() {
+			var hargaMakanan = document.getElementById("makanan").options[document.getElementById("makanan").selectedIndex].dataset.harga;
+			document.getElementById("harga-makanan").value = hargaMakanan;
+		}
+
+		function setHargaMinuman() {
+			var hargaMinuman = document.getElementById("minuman").options[document.getElementById("minuman").selectedIndex].dataset.harga;
+			document.getElementById("harga-minuman").value = hargaMinuman;
+		}
+
+		function hitungBelanja() {
+			// Ambil data input
+			var namaPembeli = document.getElementById("nama-pembeli").value;
+			var makanan = document.getElementById("makanan").value;
+			var hargaMakanan = parseInt(document.getElementById("harga-makanan").value);
+            var jumlahMakanan = parseInt(document.getElementById("jumlah-makanan").value);
+			var minuman = document.getElementById("minuman").value;
+			var hargaMinuman = parseInt(document.getElementById("harga-minuman").value);
+            var jumlahMinuman = parseInt(document.getElementById("jumlah-minuman").value);
+			var uangTunai = parseInt(document.getElementById("uang-tunai").value);
+
+			//tambahan event listener untuk tombol tampilkan total harga
+			var tampilButon = document.createElement("button");
+			tampilButon.innerHTML = "Total Harga";
+			tampilButon.onclick = tampilTotalHarga;
+			document.getElementById("output").appendChild(tampilButon);
+
+            // periksa apakah ada input yang kosong
+            if (namaPembeli === "" || makanan === "" || hargaMakanan === 0 || minuman === "" || hargaMinuman === 0 || uangTunai === 0) {
+            alert("Harap isi semua input sebelum menghitung belanja.");
+            return;
+            }
+
+			// Hitung total harga
+			var totalHarga = hargaMakanan * jumlahMakanan + hargaMinuman * jumlahMinuman;
+
+			// Hitung kembalian
+			var kembalian = uangTunai - totalHarga;
+
+           	// Menampilkan output belanja
+            alert(`
+            Catatan Belanja
+            Nama Pembeli: ${namaPembeli}
+            Makanan: ${makanan} (Harga: ${hargaMakanan} Rupiah x ${jumlahMakanan})
+            Minuman: ${minuman} (Harga: ${hargaMinuman} Rupiah x ${jumlahMinuman})
+            Total Harga: ${totalHarga} Rupiah
+            Uang Tunai: ${uangTunai} Rupiah
+            Kembalian: ${kembalian} Rupiah
+        `   );
+    		// Menampilkan pesan terima kasih
+	        alert(`Terima kasih sudah berbelanja!`);
+        }
+		function tampilTotalHarga(){
+			//ambil input
+			var hargaMakanan = parseInt(document.getElementById("harga-makanan").value);
+            var jumlahMakanan = parseInt(document.getElementById("jumlah-makanan").value);
+			var hargaMinuman = parseInt(document.getElementById("harga-minuman").value);
+            var jumlahMinuman = parseInt(document.getElementById("jumlah-minuman").value);
+
+			//Hitung total harga
+			var totalHarga = hargaMakanan * jumlahMakanan + hargaMinuman * jumlahMinuman;
+
+			//menampilkan total harga
+			document.getElementById("total-harga").innerHTML ="Total Harga: "+ totalHarga + "Rupiah"
+		}
+        </script>       
+    </body>
+</html>
