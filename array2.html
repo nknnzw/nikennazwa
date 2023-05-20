@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,3 +95,101 @@ tampilkanData
     </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Manipulasi Data Array</title>
+</head>
+<body>
+	<h1>Daftar Teman dan Hobi</h1>
+
+	<!-- Menampilkan data array menggunakan tabel -->
+	<table id="myTable">
+		<thead>
+			<tr>
+				<th>Nama Teman</th>
+				<th>Hobi</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+
+	<!-- Form untuk menambahkan data -->
+	<h2>Tambah Data</h2>
+	<form>
+		<label>Nama Teman:</label>
+		<input type="text" id="inputNama" name="inputNama" required><br>
+
+		<label>Hobi:</label>
+		<input type="text" id="inputHobi" name="inputHobi" required><br>
+
+		<button type="button" onclick="tambahData()">Tambah</button>
+	</form>
+
+	<!-- Form untuk menghapus data -->
+	<h2>Hapus Data</h2>
+	<form>
+		<label>Nama Teman:</label>
+		<select id="selectNama" name="selectNama">
+		</select><br>
+
+		<button type="button" onclick="hapusData()">Hapus</button>
+	</form>
+
+	<!-- Menambahkan script untuk menampilkan dan memanipulasi data array -->
+	<script>
+        // Data array nama teman dan hobi
+var namaTeman = ["Winda", "Salsa", "Sabila", "Nadia", "Ulya", "Selfi", "Tarisa", "Yuli"];
+var hobiTeman = ["Membaca", "Menari", "Memasak", "Traveling", "Bermain Musik", "Menyanyi", "Menggambar", "Menjahit"];
+
+// Fungsi untuk menampilkan data array ke dalam tabel
+function tampilkanData() {
+    var table = document.getElementById("myTable").getElementsByTagName('tbody')[0];
+    table.innerHTML = '';
+    for (var i = 0; i < namaTeman.length; i++) {
+        var row = table.insertRow(i);
+        var cellNama = row.insertCell(0);
+        var cellHobi = row.insertCell(1);
+        cellNama.innerHTML = namaTeman[i];
+        cellHobi.innerHTML = hobiTeman[i];
+    }
+}
+
+// Fungsi untuk menambahkan data array
+function tambahData() {
+    var inputNama = document.getElementById("inputNama").value;
+    var inputHobi = document.getElementById("inputHobi").value;
+    namaTeman.push(inputNama);
+    hobiTeman.push(inputHobi);
+    tampilkanData();
+    resetForm();
+}
+
+// Fungsi untuk menghapus data array
+function hapusData() {
+    var select = document.getElementById("selectNama");
+    var index = select.selectedIndex;
+    if (index !== -1) {
+        namaTeman.splice(index, 1);
+        hobiTeman.splice(index, 1);
+        tampilkanData();
+        select.remove(index);
+    }
+    resetForm();
+}
+
+// Fungsi untuk mereset form
+function resetForm() {
+    document.getElementById("inputNama").value = "";
+    document.getElementById("inputHobi").value = "";
+}
+
+// Menampilkan data array ke dalam tabel saat halaman dimuat
+tampilkanData
+
+    </script>
+</body>
+</html>
+>>>>>>> fc0def76f2175c1fa64eee3a16af84e49a914f71
