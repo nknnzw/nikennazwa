@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>While Statement</title>
+  <script>
+    function startCounting() {
+      var count = 1;
+      
+      while (count <= 10) {
+        document.getElementById("output").innerHTML += count + "<br>";
+        count++;
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Program Menggunakan While Statement</h1>
+  <button onclick="startCounting()">Mulai Menghitung</button>
+  <div id="output"></div>
+</body>
+</html>

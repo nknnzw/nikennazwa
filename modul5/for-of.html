@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program for...of</title>
+</head>
+<body>
+    <h1>Program for...of</h1>
+    <ul id="myList"></ul>
+    <script>
+    const myArray = [1, 2, 3, 4, 5];
+
+const myList = document.getElementById("myList");
+
+for (const item of myArray) {
+    const li = document.createElement("li");
+    li.appendChild(document.createTextNode(item));
+    myList.appendChild(li);
+}
+</script>
+</body>
+</html>

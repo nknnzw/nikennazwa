@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contoh Rest Parameter</title>
+  <script>
+    function jumlahkan(...angka) {
+      let total = 0;
+      for (let i = 0; i < angka.length; i++) {
+        total += angka[i];
+      }
+      return total;
+    }
+
+    function hitungTotal() {
+      // Mengambil nilai dari input
+      let inputAngka = document.getElementById('input-angka').value;
+
+      // Memisahkan angka-angka yang dipisahkan oleh koma menjadi array
+      let angkaArr = inputAngka.split(',');
+
+      // Mengonversi setiap elemen dalam array menjadi bilangan bulat
+      angkaArr = angkaArr.map(function(angka) {
+        return parseInt(angka, 10);
+      });
+
+      // Memanggil fungsi jumlahkan() dengan rest parameter
+      let total = jumlahkan(...angkaArr);
+
+      // Menampilkan hasil pada elemen dengan id 'hasil'
+      document.getElementById('hasil').innerHTML = "Total: " + total;
+    }
+  </script>
+</head>
+<body>
+  <h2>Menghitung Total dengan Rest Parameter</h2>
+
+  <label for="input-angka">Masukkan angka-angka (pisahkan dengan koma):</label>
+  <input type="text" id="input-angka" placeholder="Contoh: 1, 2, 3, 4">
+
+  <button onclick="hitungTotal()">Hitung</button>
+
+  <p id="hasil"></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh Perulangan For...in dengan Array</title>
+</head>
+<body>
+    <h1>Contoh Perulangan For...in dengan Array</h1>
+
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <script>
+        window.onload = function() {
+    var myList = document.getElementById("myList");
+    var items = myList.getElementsByTagName("li");
+
+    for (var index in items) {
+        if (items.hasOwnProperty(index)) {
+            var item = items[index];
+            console.log(item.innerHTML);
+        }
+    }
+};
+
+    </script>
+</body>
+</html>
+

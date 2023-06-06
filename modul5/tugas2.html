@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Luas Segitiga</title>
+    <script type="text/javascript">
+        function hitungLuas() {
+            // Mendapatkan nilai panjang dan tinggi dari input pengguna
+            var panjang = parseFloat(document.getElementById("inputPanjang").value);
+            var tinggi = parseFloat(document.getElementById("inputTinggi").value);
+
+            // Menghitung luas segitiga
+            var luas = (panjang * tinggi) / 2;
+
+            // Menampilkan hasil ke elemen dengan id "hasil"
+            document.getElementById("hasil").innerHTML = "Luas Segitiga: " + luas;
+        }
+    </script>
+</head>
+<body>
+    <h1>Menghitung Luas Segitiga</h1>
+    <label for="inputPanjang">Panjang:</label>
+    <input type="number" id="inputPanjang"><br>
+    <label for="inputTinggi">Tinggi:</label>
+    <input type="number" id="inputTinggi"><br>
+    <button onclick="hitungLuas()">Hitung</button>
+    <p id="hasil"></p>
+</body>
+</html>

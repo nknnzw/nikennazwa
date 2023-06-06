@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Break Statement</title>
+</head>
+<body>
+    <h1>Program Break Statement</h1>
+
+    <button onclick="breakLoop()">BreakLoop</button>
+
+    <script>
+        function breakLoop() {
+            var counter = 1;
+            var output = "";
+
+            while (true) {
+                output += "angka " + counter + "<br>";
+                counter++;
+
+                if (counter > 5) {
+                    break; // Statement break untuk menghentikan perulangan
+                }
+            }
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+
+    <div id="output"></div>
+</body>
+</html>
