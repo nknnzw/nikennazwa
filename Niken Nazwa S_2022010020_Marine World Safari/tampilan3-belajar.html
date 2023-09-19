@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins";
+      background: url("./assets/pict/bckgrnd.jpg");
+      background-size: cover;
+      font-size: 18px;
+    }
+    .card {
+      display: flex;
+      align-items: center;
+      width: 900px;
+      padding: 40px;
+      border-radius: 5px;
+      background: rgba(128, 190, 215, 0.75);
+      color: #00334e;
+      margin: auto;
+      text-align: justify;
+    }
+    .card img {
+      width: auto;
+      height: 300px;
+      margin: 20px;
+      /* border-radius: 50%; */
+    }
+    .card .content {
+      flex: 1;
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .ocean {
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-family: inherit;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-shadow: 3px 3px 0 #00638d, -1px -1px 0 #00638d, 1px -1px 0 #00638d,
+        -1px 1px 0 #00638d, 1px 1px 0 #00638d;
+      text-align: center;
+    }
+
+    .ocean-button {
+      background-color: #0077be;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-family: inherit;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+      text-shadow: 3px 3px 0 #222, -1px -1px 0 #222, 1px -1px 0 #222,
+        -1px 1px 0 #222, 1px 1px 0 #222;
+        animation: gelatine 1s infinite;
+    }
+    
+      
+    @keyframes gelatine {
+      from,
+      to {
+        transform: scale(1, 1);
+      }
+      25% {
+        transform: scale(0.9, 1.1);
+      }
+      50% {
+        transform: scale(1.1, 0.9);
+      }
+      75% {
+        transform: scale(0.95, 1.05);
+      }
+    }
+
+    .ocean-button:hover {
+      background-color: #005a8c;
+    }
+  </style>
+  <body>
+    <h1 class="ocean">MENGENAL HEWAN LAUT</h1>
+    <h2 class="ocean">PILIH GAMBAR</h2>
+    <div
+      style="
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 70vh;
+        width: 100vw;
+      "
+    >
+      <div class="card">
+        <a href="./dolpin.html"
+          ><img src="./assets/pict/dolpin.png" alt="Image"
+        /></a>
+        <a href="./kuda-laut.html"
+          ><img src="./assets/pict/kuda_laut.png" alt="Image"
+        /></a>
+        <a href="./tutel.html"
+          ><img src="./assets/pict/tutel.png" alt="Image"
+        /></a>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <a href="./tampilan4-bermain.html"
+        ><button class="ocean-button"><h2>BERMAIN</h2></button></a
+      >
+    </div>
+  </body>
+</html>

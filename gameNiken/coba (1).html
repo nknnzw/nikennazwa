@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Penjumlahan</title>
+    <style>
+        .image {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Penjumlahan</h1>
+    <p>Jumlahkan angka yang mewakili gambar di bawah ini:</p>
+    
+    <div id="game">
+        <img class="image" src="image1.jpg" alt="Gambar 1" onclick="checkAnswer(1)">
+        <img class="image" src="image2.jpg" alt="Gambar 2" onclick="checkAnswer(2)">
+        <img class="image" src="image3.jpg" alt="Gambar 3" onclick="checkAnswer(3)">
+    </div>
+    
+    <script>
+        var currentNumber = Math.floor(Math.random() * 3) + 1;
+        var score = 0;
+
+        function checkAnswer(guess) {
+            if (guess === currentNumber) {
+                score++;
+                alert("Jawaban benar! Skor Anda: " + score);
+            } else {
+                score--;
+                alert("Jawaban salah! Skor Anda: " + score);
+            }
+            
+            resetGame();
+        }
+
+        function resetGame() {
+            currentNumber = Math.floor(Math.random() * 3) + 1;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: url("./assets/pict/bckgrnd.jpg");
+        background-size: cover;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .question {
+        margin-bottom: 20px;
+      }
+
+      .options {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .option {
+        width: 200px;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        border: 2px solid #eee;
+        cursor: pointer;
+        border-radius: 20px;
+        background-color: #eee;
+      }
+
+      .option img {
+        height: auto;
+        object-fit: cover;
+      }
+
+      .selected {
+        background-color: #458cdd;
+      }
+
+      .ocean {
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-family: inherit;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-shadow: 3px 3px 0 #00638d, -1px -1px 0 #00638d, 1px -1px 0 #00638d,
+          -1px 1px 0 #00638d, 1px 1px 0 #00638d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="ocean">TEBAK HEWAN</h1>
+
+    <div class="question ocean">
+      <h1>Manakah Kuda Laut?</h1>
+    </div>
+
+    <div class="options">
+      <div class="option" onclick="checkAnswer(this)">
+        <img src="./assets/pict/kuda_laut.png" alt="Kuda Laut" width="50%" />
+      </div>
+      <div class="option" onclick="checkAnswer(this)">
+        <img src="./assets/pict/dolpin.png" alt="Lumba-Lumba" width="90%" />
+      </div>
+      <div class="option" onclick="checkAnswer(this)">
+        <img src="./assets/pict/tutel.png" alt="Kura-Kura" width="95%" />
+      </div>
+    </div>
+
+    <script>
+      const tempatSoal = document.querySelector('.question');
+      const arraySoal = ["Kuda Laut","Kura-Kura","Lumba-Lumba"];
+      let nomerArray = 0;
+
+      window.addEventListener('load', (event) => {
+        nomerArray = Math.floor(Math.random() * 3);
+        tempatSoal.innerHTML = `<h1>Manakah Hewan ${arraySoal[nomerArray]}</h1>`;
+      });
+      function checkAnswer(option) {
+        var options = document.getElementsByClassName("option");
+        for (var i = 0; i < options.length; i++) {
+          options[i].classList.remove("selected");
+        }
+
+        option.classList.add("selected");
+
+        var result = document.getElementById("result");
+        if (option.querySelector("img").alt === arraySoal[nomerArray]) {
+          Swal.fire({
+            icon: "success",
+            title: "SELAMAT!",
+            text: `Jawaban Kamu Benar Yaitu ${arraySoal[nomerArray]}`,
+            footer: "Klik tombol OK untuk ke level selanjutnya.",
+          }).then(function () {
+            window.location = "./tampilan5-bermain.html";
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Coba Lagi!",
+            text: "Clue: Hayo apa?",
+          });
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js"></script>
+  </body>
+</html>

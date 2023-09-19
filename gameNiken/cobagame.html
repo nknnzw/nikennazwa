@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Mengenal Hewan Laut</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #game-container {
+      margin-top: 100px;
+      display: none;
+    }
+
+    #level-info {
+      margin-top: 20px;
+    }
+
+    #game-over {
+      color: red;
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="home-page">
+    <img src="logo.png" alt="Logo Game" width="200">
+    <h1>Game Mengenal Hewan Laut</h1>
+    <p>Game yang akan menguji pengetahuanmu tentang hewan laut.</p>
+    <img src="gambar-hewan.png" alt="Gambar Hewan Laut" width="300">
+    <button onclick="startGame()">Mulai Permainan</button>
+    <br><br>
+    <a href="profil-dev.html">Profil Developer</a>
+    <br><br>
+    <p>&copy; Aps Web</p>
+  </div>
+
+  <div id="game-container">
+    <h2 id="level-info"></h2>
+    <div id="game-over"></div>
+    <!-- Tambahkan elemen-elemen permainan di sini -->
+  </div>
+
+  <script>
+    var playerName;
+    var currentLevel = 1;
+    var totalLevels = 4;
+
+    function startGame() {
+      playerName = prompt("Masukkan Nama Pemain:");
+      if (playerName) {
+        document.getElementById("home-page").style.display = "none";
+        document.getElementById("game-container").style.display = "block";
+        showLevelInfo();
+        // Panggil fungsi untuk memulai level 1
+        startLevel(currentLevel);
+      }
+    }
+
+    function showLevelInfo() {
+      document.getElementById("level-info").innerText = "Level " + currentLevel + " dari " + totalLevels;
+    }
+
+    function startLevel(level) {
+      // Logika permainan pada setiap level
+      // Misalnya, menampilkan pertanyaan tentang hewan laut dan memeriksa jawaban pemain
+      // Setelah selesai, panggil fungsi nextLevel() untuk lanjut ke level berikutnya
+    }
+
+    function nextLevel() {
+      currentLevel++;
+      if (currentLevel > totalLevels) {
+        showGameOver("Selamat, kamu menyelesaikan semua level!");
+      } else {
+        showLevelInfo();
+        startLevel(currentLevel);
+      }
+    }
+
+    function showGameOver(message) {
+      document.getElementById("game-over").innerText = message;
+      document.getElementById("game-over").style.display = "block";
+    }
+  </script>
+</body>
+</html>
+ 

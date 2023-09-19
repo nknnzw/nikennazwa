@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marine World Safari JavaScript</title>
+
+    <style>
+        body {
+            background-image: url("assets/pict/tampilan2.jpg");
+            background-size: cover;
+            background-position: center;
+            content: "";
+            position: fixed;
+            top: 20%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            gap: 10px;
+        }
+
+        .button-belajar {
+            margin-right:auto;
+        }
+
+        .button-bermain {
+            margin-left: auto;
+        }
+
+        .button-belajar a,
+        .button-bermain a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <script src="assets/game.js" defer></script>
+</head>
+
+<body>
+    <div class="button-container">
+        <div class="button-belajar">
+            <a href="tampilan3-belajar.html">
+                <img src="assets/pict/belajar.png" width="500" height="400">
+            </a>
+        </div>
+        <div class="button-bermain">
+            <a href="tampilan4-bermain.html">
+                <img src="assets/pict/bermain.png" width="500" height="400">
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

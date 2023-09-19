@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: url("./assets/pict/bckgrnd.jpg");
+      background-size: cover;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    .logo-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-name {
+      margin-left: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .logo-left img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .logo-right img {
+      width: 50px;
+      height: 50px;
+    }
+
+    /* Template Grid */
+    .item1 {
+      grid-area: header;
+    }
+    .item2 {
+      grid-area: left;
+    }
+    .item3 {
+      grid-area: main;
+    }
+    .item4 {
+      grid-area: right;
+    }
+    .item5 {
+      grid-area: footer;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas: "main main main";
+      gap: 10px;
+      height: 85vmin;
+    }
+
+    .grid-container > div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 20px 0;
+      font-size: 30px;
+    }
+    /* Template Grid */
+
+    .footer {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: center;
+      justify-content: space-between;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* CSS untuk bagian tengah footer */
+    .center-footer {
+      display: inline-block;
+    }
+
+    .bounce-button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      position: relative;
+      animation: gelatine 1s infinite;
+      margin-top: 50px;
+    }
+
+    @keyframes gelatine {
+      from,
+      to {
+        transform: scale(1, 1);
+      }
+      25% {
+        transform: scale(0.9, 1.1);
+      }
+      50% {
+        transform: scale(1.1, 0.9);
+      }
+      75% {
+        transform: scale(0.95, 1.05);
+      }
+    }
+  </style>
+  <body>
+    <nav class="navbar">
+      <div class="logo-left">
+        <img src="./assets/pict/logo.png" alt="Logo Left" />
+        <div class="logo-name">Marine World Safari</div>
+      </div>
+      <div class="logo-right">
+        <img src="./assets/pict/logo_poltek.png" alt="Logo Right" />
+        <img src="./assets/pict/logo_rpl.png" alt="Logo Right" />
+      </div>
+    </nav>
+
+    <div class="grid-container">
+      <div class="item3">
+        <img src="./assets/pict/text marine.png" /><br /><br />
+        "Discover the Depths: Dive into Marine World Safari!"
+        <br />
+
+        <u><span id="nama_pemain"></span></u>
+
+        <br />
+        <a href="./tampilan1.html">
+          <button class="bounce-button">
+            <img
+              src="./assets/pict/play.png"
+              width="100px"
+              height="100px"
+              alt=""
+            /></button
+        ></a>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="center-footer">
+        Made with ❤️ in Balekambang • Niken Nazwa •
+        <a href="https://instagram.com/nknnzw">Social Media</a>
+        <a href="profile.html">Profile</a>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      window.onload = function () {
+        Swal.fire({
+          title: "Tunggu Dulu!",
+          text: "Sebelum mulai, masukkan nama lengkapmu.",
+          input: "text",
+        }).then((result) => {
+          if (result.value) {
+            document.getElementById("nama_pemain").innerHTML = result.value;
+          }
+        });
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js"></script>
+  </body>
+</html>

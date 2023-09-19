@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tebak Gambar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: url("./assets/pict/bckgrnd.jpg");
+        background-size: cover;
+      }
+      #game {
+        margin: 20px auto;
+        text-align: center;
+      }
+      #image {
+        width: 400px;
+        height: 300px;
+        margin: 20px auto;
+      }
+      #guessInput {
+        font-family: inherit;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+      }
+      #guessButton {
+        font-family: inherit;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ffde59;
+        color: #bf4e0e;
+        font-weight: bold;
+        border: 3px solid #bf4e0e;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        background: #f2f2f2;
+        white-space: nowrap;
+      }
+
+      .otto {
+        font-size: 46px;
+        font-weight: bold;
+        color: #00618b;
+        text-shadow: 1px 0px 1px #fff, 0px 1px 1px #00cfdb, 2px 1px 1px #fff,
+          1px 2px 1px #00cfdb, 3px 2px 1px #fff, 2px 3px 1px #00cfdb,
+          4px 3px 1px #fff, 3px 4px 1px #00cfdb, 5px 4px 1px #fff,
+          4px 5px 1px #00cfdb, 6px 5px 1px #fff, 5px 6px 1px #00cfdb,
+          7px 6px 1px #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game">
+      <p class="otto">TEBAK NAMA HEWAN</p>
+      <img
+        id="image"
+        class="animate__animated animate__pulse animate__infinite infinite"
+        src="./assets/pict/tutel.png"
+        alt="Gambar Tebak"
+      />
+      <br />
+      <input type="text" id="guessInput" placeholder="Hewan Apakah ini?" />
+      <br />
+      <br />
+      <button id="guessButton" onclick="checkGuess()">Tebak</button>
+      <p id="result"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.16/dist/sweetalert2.all.min.js"></script>
+    <script>
+      function checkGuess() {
+        var guess = document.getElementById("guessInput").value.toLowerCase();
+
+        if (guess === "kura-kura") {
+          Swal.fire({
+            icon: "success",
+            title: "SELAMAT!",
+            text: "Jawaban yang benar adalah Kura-Kura",
+            footer: "Klik tombol OK untuk ke level selanjutnya.",
+          }).then(function () {
+            window.location = "./tampilan6-bermain.html";
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Coba Lagi!",
+            text: "Clue: Hayo apa?",
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

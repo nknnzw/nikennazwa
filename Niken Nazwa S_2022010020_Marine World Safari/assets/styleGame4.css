@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background:url("../assets/pict/bckgrnd.jpg") ;
+    background-size: cover;
+}
+.puzzle{
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.done {
+    margin-top: -300px;
+    margin-right: 190px;
+    float: right;
+   
+ }
+
+#board {
+    width: 430px;
+    height: 430px;
+    border: 2px solid rgb(23, 150, 201);
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#board img {
+    width: 84px;
+    height: 84px;
+    border: 0.5px solid lightblue;
+}
+
+
+
+#pieces {
+    width: 1055px;
+    height: 162px;
+    border: 2.5px solid rgb(242, 246, 248);
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#pieces img {
+    width: 79px;
+    height: 79px;
+    border: 1.5px solid lightblue;
+}

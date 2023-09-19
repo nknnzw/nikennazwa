@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+    background: rgb(74, 121, 248);
+    font-family: "Poppins", sans-serif;
+    color: #ededf0;
+    font-size: 15px;
+}
+
+.header {
+  bottom: 90vh;
+  right : 3vh;
+  left: 0vh;
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+ display: grid;
+ grid-template-columns: 33% 33% 33%;
+ grid-template-rows: 5rem;
+ justify-content: center;
+ align-items: center;
+ background-color: #b1bef5;
+  z-index: 9999;
+}
+.header div pict {
+  padding: 10px;
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+}
+.header .logo-game {
+  display: flex;
+  columns: 1;
+  width: auto;
+  height: 1rem;
+  align-items: center;
+  color: rgb(20, 77, 116);
+  position: absolute;
+  margin-top: 2%;
+  transform: translateY(-50%);
+}
+.header .logo-polibang {
+  display: flex;
+  columns: 1;
+  width: auto;
+  height: 1rem;
+  align-items: center;
+  color: rgb(110, 79, 21);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 90%;
+  margin-top: 0.5%;
+}
+.header .logo-rpl {
+  display: flex;
+  columns: 1;
+  width: auto;
+  height: 1rem;
+  align-items: center;
+  color: rgb(110, 79, 21);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 95%;
+  margin-top: 0.5%;
+}
+.header .marine {
+  font-size: 15px;
+  color: #5671e9;
+  text-shadow: 2px 2px 4px rgb(204, 238, 15);
+  position: absolute;
+  top: 50%;
+  right: 155vh; /* Perubahan: Menggunakan right untuk mengatur posisi */
+  transform: translateY(-50%);
+}
+
+.game {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.board {
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
+    background: rgb(243, 245, 247);
+    height: 350px;
+    width: 650px;
+    padding: px;
+    display: flex;
+    margin: 0 auto;
+    border-bottom: 4px solid rgb(234, 245, 83);
+    border-top: 4px solid rgb(234, 245, 83);
+    border-right: 4px solid rgb(234, 245, 83);
+    border-left: 4px solid rgb(234, 245, 83);
+}
+.anak{
+  position: absolute;
+  top: 80%; 
+  left: 88%;
+  transform: translate(-50%, -50%);
+}
+.small-board {
+  width: 550px;
+  height: 300px;
+  background-color: #b1bef5;
+  border-radius: 30px;
+  position: absolute;
+  margin-top: 4%;
+  margin-bottom: 20%;
+  margin-left: 7%;
+
+  
+}
+.small-board .tagline {
+ color : rgb(72, 72, 211);
+ font-size: 12px;
+ position: absolute;
+ top: 33%;
+ left: 10%; 
+ transform: translateY(5px);
+ text-shadow: 2px 2px 4px rgb(219, 238, 53);
+}
+.small-board .deks {
+ color : rgb(72, 72, 211);
+ font-size: 10px;
+ position: absolute;
+ top: 44%; 
+ left :7%;
+ transform: translateY(5px);
+}
+.small-board .tutel-depan {
+  position: absolute;
+  top: 65%; 
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+.small-board .buble {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.judul {
+  margin-top: 2%;
+  margin-left: 15%;
+}
+.logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo-left {
+  left: 20px;
+  top: calc(50% - 190px);
+}
+
+.logo-right {
+  right: 83px;
+  top: calc(50% - 190px);
+}
+
+.logo-right2 {
+  right: 20px;
+  top: calc(50% - 190px);
+}
+.button-play {
+  position: absolute;
+  margin-top: 35%;
+  margin-left: 40%;
+}
+.text {
+  margin-bottom: 10px;
+  color: white;
+  text-shadow: 2px 2px 4px rgb(245, 75, 7);
+}
+.h2 {
+  text-align:center;
+  margin-top: 50;
+}
+.footer {
+  top: 90vh;
+  right : 3vh;
+  left: 0vh;
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+ display: grid;
+ grid-template-columns: 33% 33% 33%;
+ grid-template-rows: 5rem;
+ justify-content: center;
+ align-items: center;
+ background-color: #b1bef5;
+}
+.footer div {
+ margin: auto;
+}
+.footer div a {
+ padding: 10px 20px;
+ background-color:#0835fc;
+ text-decoration: none;
+ color: #9b9bf1;
+ border-radius: 5px;
+}
+.copyright {
+  color:#0835fc;
+}
